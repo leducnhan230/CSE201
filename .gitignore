@@ -1,0 +1,21 @@
+# Các file đã biên dịch (Binary)
+*.class
+*.jar
+*.war
+
+# Thư mục chứa kết quả chạy (của IntelliJ, Eclipse, NetBeans)
+bin/
+out/
+target/
+build/
+
+# File cấu hình riêng của IDE (Không nên push vì mỗi máy mỗi khác)
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+
+# File rác của hệ điều hành
+Thumbs.db
+.DS_Store
