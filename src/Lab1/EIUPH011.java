@@ -1,5 +1,7 @@
 package Lab1;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class EIUPH011 {
@@ -7,24 +9,18 @@ public class EIUPH011 {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
 
-        int arrLength = sc.nextInt();
-        int[] arr = new int[arrLength];
+        int length = sc.nextInt();
+        Map<Integer, Integer> firstOccur = new LinkedHashMap<>();
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextInt();
-            boolean flag = true;
-
-            for (int j = 0; j < i; j++) {
-                if (arr[i] == arr[j]) {
-                    flag = false;
-                }
-            }
-
-            if (flag) {
-                sb.append(arr[i] + " ");
-            }
+        for (int i = 0; i < length; i++) {
+            int input = sc.nextInt();
+            firstOccur.put(input, 0);
         }
-        System.out.print(sb);
+
+        for (int key : firstOccur.keySet()) {
+            sb.append(key).append(" ");
+        }
+        System.out.println(sb);
         sc.close();
     }
 }
