@@ -1,24 +1,29 @@
 package Lab1;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class EIKMAX {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
 
-        int length = sc.nextInt();
-        int amountNumber = sc.nextInt();
-        long[] arr = new long[length];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = sc.nextLong();
+        long length = sc.nextLong();
+        int greatestNumbers = sc.nextInt();
+        
+        List<Long> numberList = new ArrayList<>();
+        for (int i = 0; i < length; i++) {
+            long input = sc.nextLong();
+            numberList.add(input);
         }
 
-        Arrays.sort(arr);
+        numberList.sort((n1, n2) -> {
+            return Long.compare(n2, n1);
+        });
 
-        for (int i = 0; i < amountNumber; i++) {
-            sb.append(arr[length - 1 - i] + " ");
+        for (int i = 0; i < greatestNumbers; i++) {
+            sb.append(numberList.get(i)).append(" ");
         }
 
         System.out.println(sb);
